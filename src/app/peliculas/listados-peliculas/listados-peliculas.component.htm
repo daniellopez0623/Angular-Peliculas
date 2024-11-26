@@ -1,0 +1,27 @@
+<button (click)="agregarPelicula()"> Agregar Pelicula </button>
+
+<app-listados-generico [listado]="pelicula">
+    <ng-container contenido>
+        @for (peliculas of pelicula; track $index) {
+        <div class="container-movie">
+
+            <div class="div-portada">
+                <div>
+                    @if (peliculas.poster) {
+                    <img [src]="peliculas.poster" alt="Portada" width="169" height="250" />
+                    }
+                    @else {
+                    <img src="../assets/img/default.jpg" alt="Portada" width="169" height="250" />
+                    }
+                </div>
+                <div>
+                    <p>{{$index}}) Pelicula: {{peliculas.titulo}}</p>
+                    <p>Fecha Lanzamieto: {{peliculas.fechaLanzamiento | date:"dd-MMM-yyyy" }}</p>
+                    <p>Precio: {{peliculas.precios |currency}}</p>
+                    <button (click)="remover(peliculas)">Remover</button>
+                </div>
+            </div>
+        </div>
+        }
+    </ng-container>
+</app-listados-generico>

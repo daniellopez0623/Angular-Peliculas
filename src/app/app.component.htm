@@ -1,0 +1,21 @@
+<h2>Solo en cines</h2>
+
+<app-listados-peliculas [pelicula]="peliculasEnCines"></app-listados-peliculas>
+
+<h2>Proximamente</h2>
+
+<app-listados-peliculas [pelicula]="peliculasEnEstreno"></app-listados-peliculas>
+
+
+
+<!--
+<div *ngIf="!pelicula">
+    <img src="https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loading" />
+</div>
+
+<div *ngIf="pelicula?.length === 0">
+    <p>
+        Nohay elementos para mostrar
+    </p>
+</div>
+-->
