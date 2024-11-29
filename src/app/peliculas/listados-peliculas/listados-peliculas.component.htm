@@ -18,7 +18,9 @@
                     <p>{{$index}}) Pelicula: {{peliculas.titulo}}</p>
                     <p>Fecha Lanzamieto: {{peliculas.fechaLanzamiento | date:"dd-MMM-yyyy" }}</p>
                     <p>Precio: {{peliculas.precios |currency}}</p>
-                    <button (click)="remover(peliculas)">Remover</button>
+                    <button  mat-flat-button (click)="remover(peliculas)">Remover
+                        <mat-icon>delete</mat-icon>
+                    </button>
                 </div>
             </div>
         </div>

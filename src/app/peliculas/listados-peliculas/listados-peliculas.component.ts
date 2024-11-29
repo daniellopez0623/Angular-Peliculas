@@ -2,11 +2,12 @@ import { Component, OnInit, Input, input } from '@angular/core';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { ListadosGenericoComponent } from "../../compartidos/componentes/listados-generico/listados-generico.component";
 import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-listados-peliculas',
   standalone: true,
-  imports: [DatePipe, CurrencyPipe, ListadosGenericoComponent, MatButtonModule],
+  imports: [DatePipe, CurrencyPipe, ListadosGenericoComponent, MatButtonModule, MatIconModule],
   templateUrl: './listados-peliculas.component.htm',
   styleUrl: './listados-peliculas.component.css'
 })
