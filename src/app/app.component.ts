@@ -97,5 +97,11 @@ export class AppComponent implements OnInit {
 
   peliculasEnCines!: any[];
   peliculasEnEstreno!: any[];
+  cargando = true;
+
+  procesarVoto(voto: number) {
+    alert(`Calificación otorgada: ${voto}`);
+    // Aquí podrías enviar el voto a una API.
+  }
 
 }

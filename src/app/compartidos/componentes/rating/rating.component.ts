@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -9,26 +9,23 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './rating.component.htm',
   styleUrl: './rating.component.css'
 })
-export class RatingComponent implements OnInit {
+export class RatingComponent {
 
-  ngOnInit(): void {
-    this.maximoRatingArreglo = Array(this.maximoRating).fill(0);
-  }
- 
-  @Input({ required: true })
-  maximoRating!: number;
+
+  @Input({ required: true, transform: (valor: number) => Array(valor).fill(0) })
+  maximoRating!: number[];
 
   @Input()
   ratingSeleccionado = 0;
-
-  maximoRatingArreglo: any[] = [];
+  @Output()
+  votado = new EventEmitter<number>();
 
   ratingAnterior = 0;
 
   manejoMouseEnter(i: number) {
     this.ratingSeleccionado = i + 1;
   }
-  
+
   manejoMouseLeave() {
     if (this.ratingAnterior !== 0) {
       this.ratingSeleccionado = this.ratingAnterior;
@@ -36,9 +33,10 @@ export class RatingComponent implements OnInit {
       this.ratingSeleccionado = 0;
     }
   }
-  
+
   manejarClick(i: number) {
     this.ratingSeleccionado = i + 1;
-    this.ratingAnterior =  this.ratingSeleccionado;
+    this.ratingAnterior = this.ratingSeleccionado;
+    this.votado.emit(this.ratingSeleccionado);
   }
 }
