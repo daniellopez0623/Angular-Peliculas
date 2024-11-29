@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ListadosPeliculasComponent } from "./peliculas/listados-peliculas/listados-peliculas.component";
-
+import { MenuComponent } from './compartidos/componentes/menu/menu.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ListadosPeliculasComponent],
+  imports: [ListadosPeliculasComponent, MenuComponent],
   templateUrl: './app.component.htm',
   styleUrl: './app.component.css'
 })

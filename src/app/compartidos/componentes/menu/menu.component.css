@@ -1,0 +1,6 @@
+mat-toolbar {
+    position: sticky; /* Permite que el elemento sea pegajoso. */
+    position: -webkit-sticky; /* Soporte para navegadores basados en WebKit. */
+    top: 0; /* Define que el elemento estará pegajoso en la parte superior de la ventana. */
+    z-index: 1000; /* Asegura que el elemento se mantenga por encima de otros elementos. */
+  }
