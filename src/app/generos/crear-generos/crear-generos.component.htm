@@ -1,13 +1,13 @@
 <h2>Crear Género</h2>
 
 <form (submit)="guardarCambios()" [formGroup]="form">
-    <mat-form-field appearance="fill"><!--standard legacy-->
+    <mat-form-field appearance="outline"><!--standard legacy-->
         <mat-label>Nombre</mat-label>
         <input matInput [formControl]="form.controls.nombre" />
     </mat-form-field>
 
     <div>
-        <button mat-flat-button type="button" (click)="guardarCambios()">Guardar cambios</button>
-        <a mat-stroked-button routerLink="/generos">Cancelar</a>
+        <button mat-flat-button type="button" (click)="guardarCambios()">Guardar cambios</button>       
+        <a mat-flat-button type="button" routerLink="/generos">Cancelar</a>
     </div>
 </form>
